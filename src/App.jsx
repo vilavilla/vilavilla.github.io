@@ -1256,7 +1256,7 @@ function App() {
                                         viewport={{ once: true }}
                                         transition={{ duration: 0.5, delay: 0.2 }}
                                     >
-                                        3+
+                                        1+
                                     </motion.div>
                                     <p className={`mt-3 text-sm font-medium ${isDark ? 'text-zinc-300' : 'text-slate-600'}`}>
                                         Years of Experience
