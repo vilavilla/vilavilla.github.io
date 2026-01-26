@@ -6,7 +6,6 @@
 
 # cache
 /.cache
-public/_config.yml
-public/.nojekyll
+
 # local env
 .env
