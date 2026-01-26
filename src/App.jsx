@@ -69,21 +69,21 @@ const translations = {
                     tag: 'Thesis Project',
                     desc: 'Unity + C++ + LLMs. Real-time avatar with low-latency voice interaction.',
                     tech: ['Unity', 'C++', 'LLMs', 'VR'],
-                    link: 'https://github.com/joanvila'
+                    link: 'https://github.com/vilavilla'
                 },
                 {
                     name: 'The Rogue Taxi',
                     tag: 'AI Game',
                     desc: 'Social Engineering Game using RAG & VectorDBs (FAISS).',
                     tech: ['Python', 'RAG', 'FAISS', 'LangChain'],
-                    link: 'https://github.com/joanvila'
+                    link: 'https://github.com/vilavilla'
                 },
                 {
                     name: 'Assistive CV',
                     tag: 'Computer Vision',
                     desc: 'YOLOv8 Object detection for visually impaired navigation.',
                     tech: ['Python', 'YOLOv8', 'OpenCV', 'TensorFlow'],
-                    link: 'https://github.com/joanvila'
+                    link: 'https://github.com/vilavilla'
                 }
             ]
         },
@@ -162,21 +162,21 @@ const translations = {
                     tag: 'Proyecto de Tesis',
                     desc: 'Unity + C++ + LLMs. Avatar en tiempo real con interacción de voz de baja latencia.',
                     tech: ['Unity', 'C++', 'LLMs', 'VR'],
-                    link: 'https://github.com/joanvila'
+                    link: 'https://github.com/vilavilla'
                 },
                 {
                     name: 'The Rogue Taxi',
                     tag: 'Juego IA',
                     desc: 'Juego de Ingeniería Social usando RAG y VectorDBs (FAISS).',
                     tech: ['Python', 'RAG', 'FAISS', 'LangChain'],
-                    link: 'https://github.com/joanvila'
+                    link: 'https://github.com/vilavilla'
                 },
                 {
                     name: 'Assistive CV',
                     tag: 'Visión por Computador',
                     desc: 'Detección de objetos con YOLOv8 para navegación de personas con discapacidad visual.',
                     tech: ['Python', 'YOLOv8', 'OpenCV', 'TensorFlow'],
-                    link: 'https://github.com/joanvila'
+                    link: 'https://github.com/vilavilla'
                 }
             ]
         },
@@ -255,21 +255,21 @@ const translations = {
                     tag: 'Projecte de Tesi',
                     desc: 'Unity + C++ + LLMs. Avatar en temps real amb interacció de veu de baixa latència.',
                     tech: ['Unity', 'C++', 'LLMs', 'VR'],
-                    link: 'https://github.com/joanvila'
+                    link: 'https://github.com/vilavilla'
                 },
                 {
                     name: 'The Rogue Taxi',
                     tag: 'Joc IA',
                     desc: "Joc d'Enginyeria Social usant RAG i VectorDBs (FAISS).",
                     tech: ['Python', 'RAG', 'FAISS', 'LangChain'],
-                    link: 'https://github.com/joanvila'
+                    link: 'https://github.com/vilavilla'
                 },
                 {
                     name: 'Assistive CV',
                     tag: 'Visió per Computador',
                     desc: "Detecció d'objectes amb YOLOv8 per a navegació de persones amb discapacitat visual.",
                     tech: ['Python', 'YOLOv8', 'OpenCV', 'TensorFlow'],
-                    link: 'https://github.com/joanvila'
+                    link: 'https://github.com/vilavilla'
                 }
             ]
         },
@@ -348,21 +348,21 @@ const translations = {
                     tag: 'Progetto di Tesi',
                     desc: 'Unity + C++ + LLMs. Avatar in tempo reale con interazione vocale a bassa latenza.',
                     tech: ['Unity', 'C++', 'LLMs', 'VR'],
-                    link: 'https://github.com/joanvila'
+                    link: 'https://github.com/vilavilla'
                 },
                 {
                     name: 'The Rogue Taxi',
                     tag: 'Gioco IA',
                     desc: 'Gioco di Social Engineering usando RAG e VectorDBs (FAISS).',
                     tech: ['Python', 'RAG', 'FAISS', 'LangChain'],
-                    link: 'https://github.com/joanvila'
+                    link: 'https://github.com/vilavilla'
                 },
                 {
                     name: 'Assistive CV',
                     tag: 'Computer Vision',
                     desc: 'Rilevamento oggetti con YOLOv8 per la navigazione di persone ipovedenti.',
                     tech: ['Python', 'YOLOv8', 'OpenCV', 'TensorFlow'],
-                    link: 'https://github.com/joanvila'
+                    link: 'https://github.com/vilavilla'
                 }
             ]
         },
@@ -441,21 +441,21 @@ const translations = {
                     tag: 'Projet de Thèse',
                     desc: 'Unity + C++ + LLMs. Avatar temps réel avec interaction vocale basse latence.',
                     tech: ['Unity', 'C++', 'LLMs', 'VR'],
-                    link: 'https://github.com/joanvila'
+                    link: 'https://github.com/vilavilla'
                 },
                 {
                     name: 'The Rogue Taxi',
                     tag: 'Jeu IA',
                     desc: "Jeu d'Ingénierie Sociale utilisant RAG et VectorDBs (FAISS).",
                     tech: ['Python', 'RAG', 'FAISS', 'LangChain'],
-                    link: 'https://github.com/joanvila'
+                    link: 'https://github.com/vilavilla'
                 },
                 {
                     name: 'Assistive CV',
                     tag: 'Vision par Ordinateur',
                     desc: "Détection d'objets avec YOLOv8 pour navigation des malvoyants.",
                     tech: ['Python', 'YOLOv8', 'OpenCV', 'TensorFlow'],
-                    link: 'https://github.com/joanvila'
+                    link: 'https://github.com/vilavilla'
                 }
             ]
         },
@@ -534,21 +534,21 @@ const translations = {
                     tag: 'Thesis Projekt',
                     desc: 'Unity + C++ + LLMs. Echtzeit-Avatar mit latenzarmer Sprachinteraktion.',
                     tech: ['Unity', 'C++', 'LLMs', 'VR'],
-                    link: 'https://github.com/joanvila'
+                    link: 'https://github.com/vilavilla'
                 },
                 {
                     name: 'The Rogue Taxi',
                     tag: 'KI Spiel',
                     desc: 'Social Engineering Spiel mit RAG und VectorDBs (FAISS).',
                     tech: ['Python', 'RAG', 'FAISS', 'LangChain'],
-                    link: 'https://github.com/joanvila'
+                    link: 'https://github.com/vilavilla'
                 },
                 {
                     name: 'Assistive CV',
                     tag: 'Computer Vision',
                     desc: 'YOLOv8 Objekterkennung für Navigation von Sehbehinderten.',
                     tech: ['Python', 'YOLOv8', 'OpenCV', 'TensorFlow'],
-                    link: 'https://github.com/joanvila'
+                    link: 'https://github.com/vilavilla'
                 }
             ]
         },
