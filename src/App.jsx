@@ -48,7 +48,7 @@ const translations = {
                     subtitle: 'Erasmus+ Scholar',
                     role: 'Exchange Student',
                     desc: 'Focus on Robotics, AI & Computer Vision.',
-                    period: '2023 - 2024',
+                    period: 'Feb 2026 - Jul 2026',
                     type: 'education'
                 },
                 {
@@ -56,7 +56,7 @@ const translations = {
                     subtitle: 'Barcelona',
                     role: 'Computer Engineering Degree',
                     desc: 'High Performance Computing & Software Architecture.',
-                    period: '2020 - Present',
+                    period: '2022 - Present',
                     type: 'education'
                 }
             ]
@@ -141,7 +141,7 @@ const translations = {
                     subtitle: 'Beca Erasmus+',
                     role: 'Estudiante de Intercambio',
                     desc: 'Enfoque en Robótica, IA y Visión por Computador.',
-                    period: '2023 - 2024',
+                    period: 'Feb 2026 - Jul 2026',
                     type: 'education'
                 },
                 {
@@ -149,7 +149,7 @@ const translations = {
                     subtitle: 'Barcelona',
                     role: 'Grado en Ingeniería Informática',
                     desc: 'Computación de Alto Rendimiento y Arquitectura de Software.',
-                    period: '2020 - Presente',
+                    period: '2022 - Presente',
                     type: 'education'
                 }
             ]
@@ -234,7 +234,7 @@ const translations = {
                     subtitle: 'Beca Erasmus+',
                     role: "Estudiant d'Intercanvi",
                     desc: 'Enfocament en Robòtica, IA i Visió per Computador.',
-                    period: '2023 - 2024',
+                    period: 'Feb 2026 - Jul 2026',
                     type: 'education'
                 },
                 {
@@ -242,7 +242,7 @@ const translations = {
                     subtitle: 'Barcelona',
                     role: "Grau en Enginyeria Informàtica",
                     desc: 'Computació d\'Alt Rendiment i Arquitectura de Software.',
-                    period: '2020 - Present',
+                    period: '2022 - Present',
                     type: 'education'
                 }
             ]
@@ -327,7 +327,7 @@ const translations = {
                     subtitle: 'Borsa Erasmus+',
                     role: 'Studente di Scambio',
                     desc: 'Focus su Robotica, IA e Computer Vision.',
-                    period: '2023 - 2024',
+                    period: 'Feb 2026 - Lug 2026',
                     type: 'education'
                 },
                 {
@@ -335,7 +335,7 @@ const translations = {
                     subtitle: 'Barcellona',
                     role: 'Laurea in Ingegneria Informatica',
                     desc: 'High Performance Computing e Architettura Software.',
-                    period: '2020 - Presente',
+                    period: '2022 - Presente',
                     type: 'education'
                 }
             ]
@@ -420,7 +420,7 @@ const translations = {
                     subtitle: 'Bourse Erasmus+',
                     role: "Étudiant d'Échange",
                     desc: 'Focus sur Robotique, IA et Vision par Ordinateur.',
-                    period: '2023 - 2024',
+                    period: 'Fév 2026 - Juil 2026',
                     type: 'education'
                 },
                 {
@@ -428,7 +428,7 @@ const translations = {
                     subtitle: 'Barcelone',
                     role: 'Licence en Ingénierie Informatique',
                     desc: 'Calcul Haute Performance et Architecture Logicielle.',
-                    period: '2020 - Présent',
+                    period: '2022 - Présent',
                     type: 'education'
                 }
             ]
@@ -513,7 +513,7 @@ const translations = {
                     subtitle: 'Erasmus+ Stipendium',
                     role: 'Austauschstudent',
                     desc: 'Fokus auf Robotik, KI und Computer Vision.',
-                    period: '2023 - 2024',
+                    period: 'Feb 2026 - Jul 2026',
                     type: 'education'
                 },
                 {
@@ -521,7 +521,7 @@ const translations = {
                     subtitle: 'Barcelona',
                     role: 'Bachelor Informatik',
                     desc: 'High Performance Computing und Software-Architektur.',
-                    period: '2020 - Aktuell',
+                    period: '2022 - Aktuell',
                     type: 'education'
                 }
             ]
