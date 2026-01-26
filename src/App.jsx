@@ -1185,7 +1185,6 @@ function App() {
                             {[
                                 { icon: Github, href: 'https://github.com/vilavilla', label: 'GitHub' },
                                 { icon: Linkedin, href: 'https://www.linkedin.com/in/joan-vila-orus-a82840278/', label: 'LinkedIn' },
-                                { icon: Mail, href: 'mailto:joanvilaa4@gmail.com', label: 'Email' },
                             ].map((social) => (
                                 <motion.a
                                     key={social.label}
