@@ -1,0 +1,12 @@
+# dependencies
+/node_modules
+
+# production build
+/dist
+
+# cache
+/.cache
+public/_config.yml
+public/.nojekyll
+# local env
+.env
