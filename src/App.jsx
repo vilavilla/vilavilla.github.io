@@ -40,7 +40,7 @@ const translations = {
                     subtitle: 'Research Unit',
                     role: 'Machine Learning Engineer Intern',
                     desc: 'Privacy-preserving NLP with BERT & Deployment on Vertex AI.',
-                    period: '2024 - Present',
+                    period: 'Oct 2025 - Feb 2026',
                     type: 'work'
                 },
                 {
@@ -133,7 +133,7 @@ const translations = {
                     subtitle: 'Unidad de Investigación',
                     role: 'Ingeniero Machine Learning (Prácticas)',
                     desc: 'NLP con privacidad preservada usando BERT y despliegue en Vertex AI.',
-                    period: '2024 - Presente',
+                    period: 'Oct 2025 - Feb 2026',
                     type: 'work'
                 },
                 {
@@ -226,7 +226,7 @@ const translations = {
                     subtitle: 'Unitat de Recerca',
                     role: 'Enginyer Machine Learning (Pràctiques)',
                     desc: 'NLP amb privacitat preservada usant BERT i desplegament a Vertex AI.',
-                    period: '2024 - Present',
+                    period: 'Oct 2025 - Feb 2026',
                     type: 'work'
                 },
                 {
@@ -319,7 +319,7 @@ const translations = {
                     subtitle: 'Unità di Ricerca',
                     role: 'Ingegnere Machine Learning (Stage)',
                     desc: 'NLP con privacy preservata usando BERT e deployment su Vertex AI.',
-                    period: '2024 - Presente',
+                    period: 'Ott 2025 - Feb 2026',
                     type: 'work'
                 },
                 {
@@ -412,7 +412,7 @@ const translations = {
                     subtitle: 'Unité de Recherche',
                     role: 'Ingénieur Machine Learning (Stage)',
                     desc: 'NLP préservant la confidentialité avec BERT et déploiement sur Vertex AI.',
-                    period: '2024 - Présent',
+                    period: 'Oct 2025 - Fév 2026',
                     type: 'work'
                 },
                 {
@@ -505,7 +505,7 @@ const translations = {
                     subtitle: 'Forschungsabteilung',
                     role: 'Machine Learning Ingenieur (Praktikum)',
                     desc: 'Datenschutzkonformes NLP mit BERT und Deployment auf Vertex AI.',
-                    period: '2024 - Aktuell',
+                    period: 'Okt 2025 - Feb 2026',
                     type: 'work'
                 },
                 {
