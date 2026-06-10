@@ -72,10 +72,10 @@ const translations = {
                     link: 'https://github.com/vilavilla'
                 },
                 {
-                    name: 'The Rogue Taxi',
-                    tag: 'AI Game',
-                    desc: 'Social Engineering Game using RAG & VectorDBs (FAISS).',
-                    tech: ['Python', 'RAG', 'FAISS', 'LangChain'],
+                    name: 'AI Performance Coach',
+                    tag: 'Work in Progress',
+                    desc: 'AI-powered training coach that generates adaptive workout plans using LLMs, backend logic and structured progression rules.',
+                    tech: ['Python', 'FastAPI', 'LangChain', 'LLM APIs', 'RAG', 'REST APIs'],
                     link: 'https://github.com/vilavilla'
                 },
                 {
@@ -165,10 +165,10 @@ const translations = {
                     link: 'https://github.com/vilavilla'
                 },
                 {
-                    name: 'The Rogue Taxi',
-                    tag: 'Juego IA',
-                    desc: 'Juego de Ingeniería Social usando RAG y VectorDBs (FAISS).',
-                    tech: ['Python', 'RAG', 'FAISS', 'LangChain'],
+                    name: 'AI Performance Coach',
+                    tag: 'En desarrollo',
+                    desc: 'Asistente de entrenamiento con IA que genera planes de ejercicio adaptativos mediante LLMs, lógica de backend y reglas de progresión estructuradas.',
+                    tech: ['Python', 'FastAPI', 'LangChain', 'LLM APIs', 'RAG', 'REST APIs'],
                     link: 'https://github.com/vilavilla'
                 },
                 {
@@ -258,10 +258,10 @@ const translations = {
                     link: 'https://github.com/vilavilla'
                 },
                 {
-                    name: 'The Rogue Taxi',
-                    tag: 'Joc IA',
-                    desc: "Joc d'Enginyeria Social usant RAG i VectorDBs (FAISS).",
-                    tech: ['Python', 'RAG', 'FAISS', 'LangChain'],
+                    name: 'AI Performance Coach',
+                    tag: 'En desenvolupament',
+                    desc: "Assistent d'entrenament amb IA que genera plans d'exercici adaptatius mitjançant LLMs, lògica de backend i regles de progressió estructurades.",
+                    tech: ['Python', 'FastAPI', 'LangChain', 'LLM APIs', 'RAG', 'REST APIs'],
                     link: 'https://github.com/vilavilla'
                 },
                 {
@@ -351,10 +351,10 @@ const translations = {
                     link: 'https://github.com/vilavilla'
                 },
                 {
-                    name: 'The Rogue Taxi',
-                    tag: 'Gioco IA',
-                    desc: 'Gioco di Social Engineering usando RAG e VectorDBs (FAISS).',
-                    tech: ['Python', 'RAG', 'FAISS', 'LangChain'],
+                    name: 'AI Performance Coach',
+                    tag: 'In sviluppo',
+                    desc: 'Coach di allenamento basato su IA che genera piani di workout adattativi tramite LLMs, logica backend e regole di progressione strutturate.',
+                    tech: ['Python', 'FastAPI', 'LangChain', 'LLM APIs', 'RAG', 'REST APIs'],
                     link: 'https://github.com/vilavilla'
                 },
                 {
@@ -444,10 +444,10 @@ const translations = {
                     link: 'https://github.com/vilavilla'
                 },
                 {
-                    name: 'The Rogue Taxi',
-                    tag: 'Jeu IA',
-                    desc: "Jeu d'Ingénierie Sociale utilisant RAG et VectorDBs (FAISS).",
-                    tech: ['Python', 'RAG', 'FAISS', 'LangChain'],
+                    name: 'AI Performance Coach',
+                    tag: 'En cours',
+                    desc: "Coach d'entraînement IA qui génère des plans d'exercice adaptatifs via LLMs, logique backend et règles de progression structurées.",
+                    tech: ['Python', 'FastAPI', 'LangChain', 'LLM APIs', 'RAG', 'REST APIs'],
                     link: 'https://github.com/vilavilla'
                 },
                 {
@@ -537,10 +537,10 @@ const translations = {
                     link: 'https://github.com/vilavilla'
                 },
                 {
-                    name: 'The Rogue Taxi',
-                    tag: 'KI Spiel',
-                    desc: 'Social Engineering Spiel mit RAG und VectorDBs (FAISS).',
-                    tech: ['Python', 'RAG', 'FAISS', 'LangChain'],
+                    name: 'AI Performance Coach',
+                    tag: 'In Entwicklung',
+                    desc: 'KI-gestützter Trainingscoach, der adaptive Workoutpläne mittels LLMs, Backend-Logik und strukturierten Progressionsregeln erstellt.',
+                    tech: ['Python', 'FastAPI', 'LangChain', 'LLM APIs', 'RAG', 'REST APIs'],
                     link: 'https://github.com/vilavilla'
                 },
                 {
