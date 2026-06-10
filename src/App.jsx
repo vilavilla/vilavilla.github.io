@@ -578,20 +578,26 @@ const translations = {
 
 const skillsData = {
     languages: [
-        { name: 'C++', icon: Code2, level: 90 },
         { name: 'Python', icon: Terminal, level: 95 },
-        { name: 'JavaScript', icon: Code2, level: 80 },
+        { name: 'C++', icon: Code2, level: 88 },
+        { name: 'JavaScript', icon: Code2, level: 78 },
+        { name: 'SQL', icon: Database, level: 72 },
     ],
     ai: [
-        { name: 'PyTorch', icon: Brain, level: 85 },
-        { name: 'TensorFlow', icon: Cpu, level: 80 },
-        { name: 'LLMs', icon: Bot, level: 90 },
+        { name: 'LangChain', icon: Bot, level: 85 },
+        { name: 'LLMs & Prompt Eng.', icon: Brain, level: 88 },
+        { name: 'PyTorch', icon: Cpu, level: 82 },
+        { name: 'HuggingFace', icon: Brain, level: 78 },
+        { name: 'RAG / VectorDBs', icon: Database, level: 80 },
+        { name: 'OpenCV / YOLOv8', icon: Eye, level: 80 },
     ],
     tools: [
-        { name: 'Unity', icon: Gamepad2, level: 85 },
-        { name: 'Docker', icon: Container, level: 80 },
-        { name: 'Linux', icon: Terminal, level: 90 },
-        { name: 'AWS/GCP', icon: Cloud, level: 75 },
+        { name: 'FastAPI', icon: Terminal, level: 82 },
+        { name: 'Docker', icon: Container, level: 78 },
+        { name: 'Git / GitHub', icon: Code2, level: 90 },
+        { name: 'Linux', icon: Terminal, level: 88 },
+        { name: 'Unity', icon: Gamepad2, level: 84 },
+        { name: 'GCP / Vertex AI', icon: Cloud, level: 72 },
     ]
 };
 
