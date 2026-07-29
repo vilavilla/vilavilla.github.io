@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, MotionConfig, useScroll, useSpring } from 'framer-motion';
 import {
     Sun, Moon, Globe, Github, Linkedin, Mail, ExternalLink,
     Briefcase, GraduationCap, Code2, Brain, Terminal, Cpu,
     Eye, Gamepad2, Bot, Database, Cloud, Container,
-    ChevronRight, Sparkles, MapPin, Calendar, ArrowRight, Copy, Check
+    ChevronRight, Sparkles, MapPin, Calendar, ArrowRight, Copy, Check,
+    Menu, X, Download
 } from 'lucide-react';
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -854,11 +855,12 @@ const translations = {
 // ═══════════════════════════════════════════════════════════════════════════════
 
 const fadeInUp = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 38, filter: 'blur(8px)' },
     visible: {
         opacity: 1,
         y: 0,
-        transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] }
+        filter: 'blur(0px)',
+        transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] }
     }
 };
 
@@ -871,11 +873,12 @@ const staggerContainer = {
 };
 
 const scaleIn = {
-    hidden: { opacity: 0, scale: 0.85 },
+    hidden: { opacity: 0, scale: 0.82, filter: 'blur(8px)' },
     visible: {
         opacity: 1,
         scale: 1,
-        transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] }
+        filter: 'blur(0px)',
+        transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
     }
 };
 
@@ -947,12 +950,9 @@ const LanguageSelector = ({ currentLang, setLang }) => {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={() => setIsOpen(!isOpen)}
-                className="flex items-center gap-2 px-3 py-2 rounded-xl
-                   bg-zinc-800/50 dark:bg-zinc-800/50 bg-slate-100
-                   hover:bg-zinc-700/50 dark:hover:bg-zinc-700/50 hover:bg-slate-200
-                   border border-zinc-700/40 dark:border-zinc-700/40 border-slate-200
-                   transition-all duration-200 text-sm font-medium"
+                className="control-button flex items-center gap-2 px-3.5 py-2.5 text-sm font-medium"
                 aria-label="Select language"
+                aria-expanded={isOpen}
             >
                 <Globe className="w-3.5 h-3.5 opacity-60" />
                 {languages.find(l => l.code === currentLang)?.flag && (
@@ -968,21 +968,16 @@ const LanguageSelector = ({ currentLang, setLang }) => {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: -8, scale: 0.95 }}
                         transition={{ duration: 0.15 }}
-                        className="absolute top-full right-0 mt-2 py-1.5 px-1
-                       bg-zinc-900/95 dark:bg-zinc-900/95 bg-white/95
-                       backdrop-blur-xl rounded-xl border
-                       border-zinc-700/40 dark:border-zinc-700/40 border-slate-200
-                       shadow-xl min-w-[130px] z-50"
+                        className="language-menu absolute top-full right-0 mt-3 py-2 px-2
+                       backdrop-blur-2xl rounded-2xl border shadow-2xl min-w-[154px] z-50"
                     >
                         {languages.map((lang) => (
                             <button
                                 key={lang.code}
                                 onClick={() => { setLang(lang.code); setIsOpen(false); }}
-                                className={`w-full flex items-center gap-2.5 px-3 py-1.5 rounded-lg
-                                   text-sm transition-colors text-left
-                                   ${currentLang === lang.code
-                                        ? 'text-blue-400 bg-blue-500/10'
-                                        : 'text-zinc-300 dark:text-zinc-300 text-slate-600 hover:bg-zinc-800/50 dark:hover:bg-zinc-800/50 hover:bg-slate-100'}`}
+                                className={`language-option w-full flex items-center gap-2.5 px-3 py-2 rounded-xl
+                                   text-sm transition-all duration-200 text-left
+                                   ${currentLang === lang.code ? 'is-active' : ''}`}
                             >
                                 <span className="text-base">{lang.flag}</span>
                                 <span className="font-medium">{lang.label}</span>
@@ -1001,11 +996,7 @@ const ThemeToggle = ({ isDark, setIsDark }) => (
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}
         onClick={() => setIsDark(!isDark)}
-        className="p-2.5 rounded-xl
-               bg-zinc-800/50 dark:bg-zinc-800/50 bg-slate-100
-               hover:bg-zinc-700/50 dark:hover:bg-zinc-700/50 hover:bg-slate-200
-               border border-zinc-700/40 dark:border-zinc-700/40 border-slate-200
-               transition-all duration-200"
+        className="control-button p-2.5"
         aria-label="Toggle theme"
     >
         <AnimatePresence mode="wait">
@@ -1040,12 +1031,10 @@ const BentoCard = ({ children, className = '', delay = 0, hover = true }) => (
         whileInView="visible"
         viewport={{ once: true, margin: "-40px" }}
         transition={{ delay }}
-        whileHover={hover ? { y: -4, transition: { duration: 0.25, ease: "easeOut" } } : {}}
-        className={`bento-card group relative p-6 ${className}`}
+        whileHover={hover ? { y: -7, transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] } } : {}}
+        className={`bento-card group relative p-6 sm:p-7 ${className}`}
     >
-        <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100
-                    transition-opacity duration-400 pointer-events-none
-                    bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-transparent" />
+        <div className="card-shine absolute inset-0 opacity-0 group-hover:opacity-100 pointer-events-none" />
         <div className="relative z-10">{children}</div>
     </motion.div>
 );
@@ -1074,10 +1063,7 @@ const TimelineItem = ({ item, isLast }) => (
         <motion.div
             whileHover={{ x: 4 }}
             transition={{ duration: 0.2 }}
-            className="dark:bg-zinc-800/40 bg-white rounded-xl p-5
-                 dark:border-zinc-700/30 border-slate-200 border
-                 hover:border-blue-500/25 dark:hover:border-blue-500/25
-                 transition-all duration-300 shadow-sm dark:shadow-none"
+            className="timeline-card rounded-2xl p-5 sm:p-6 border transition-all duration-300"
         >
             <div className="flex items-start justify-between flex-wrap gap-2 mb-1.5">
                 <div>
@@ -1104,9 +1090,12 @@ const gradientMap = {
     purple: 'from-purple-500 to-pink-500'
 };
 
+const projectIcons = [Bot, Database, Brain, Eye];
+
 const ProjectCard = ({ project, index }) => {
     const colors  = tagColorMap[project.tagColor] || tagColorMap.blue;
     const gradient = gradientMap[project.tagColor] || gradientMap.blue;
+    const ProjectIcon = projectIcons[index % projectIcons.length];
     return (
         <motion.div
             variants={fadeInUp}
@@ -1114,13 +1103,15 @@ const ProjectCard = ({ project, index }) => {
             whileInView="visible"
             viewport={{ once: true, margin: "-40px" }}
             transition={{ delay: index * 0.08 }}
-            whileHover={{ y: -6, transition: { duration: 0.25 } }}
-            className="bento-card group relative overflow-hidden flex flex-col"
+            whileHover={{ y: -8, transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] } }}
+            className="bento-card project-card group relative overflow-hidden flex flex-col"
         >
-            {/* Colour bar */}
-            <div className={`h-1 w-full bg-gradient-to-r ${gradient} opacity-80`} />
+            <div className={`project-accent absolute inset-x-0 top-0 h-px bg-gradient-to-r ${gradient}`} />
+            <div className="project-watermark" aria-hidden="true">
+                <ProjectIcon />
+            </div>
 
-            <div className="p-6 flex flex-col h-full">
+            <div className="p-6 sm:p-7 flex flex-col h-full relative z-10">
                 {/* Tag + link */}
                 <div className="flex items-center justify-between mb-4">
                     <span className={`px-2.5 py-1 text-xs font-medium rounded-full border ${colors.bg} ${colors.border} ${colors.text}`}>
@@ -1129,10 +1120,10 @@ const ProjectCard = ({ project, index }) => {
                     <motion.a
                         href={project.link} target="_blank" rel="noopener noreferrer"
                         whileHover={{ scale: 1.15 }} whileTap={{ scale: 0.9 }}
-                        className="p-1.5 rounded-lg dark:bg-zinc-800/60 bg-slate-100 hover:bg-blue-500/15 transition-colors"
+                        className="project-link p-2.5 rounded-xl transition-all"
                         aria-label={`View ${project.name}`}
                     >
-                        <Github className="w-3.5 h-3.5 dark:text-zinc-500 text-slate-400" />
+                        <ExternalLink className="w-4 h-4" />
                     </motion.a>
                 </div>
 
@@ -1146,13 +1137,21 @@ const ProjectCard = ({ project, index }) => {
                     {project.desc}
                 </p>
 
+                <div className="arch-flow mt-5" aria-hidden="true">
+                    {project.arch.map((node, nodeIndex) => (
+                        <div key={node} className="contents">
+                            <span className="arch-node">{node}</span>
+                            {nodeIndex < project.arch.length - 1 && (
+                                <ArrowRight className="arch-arrow w-3 h-3" />
+                            )}
+                        </div>
+                    ))}
+                </div>
+
                 {/* Tech pills */}
-                <div className="flex flex-wrap gap-1.5 mt-4 pt-4 border-t dark:border-zinc-800/60 border-slate-100">
+                <div className="flex flex-wrap gap-1.5 mt-5 pt-5 border-t dark:border-white/[0.07] border-slate-200/70">
                     {project.tech.map((tech) => (
-                        <span key={tech} className="px-2 py-0.5 text-xs font-code rounded
-                          dark:bg-zinc-800/70 bg-slate-100
-                          dark:text-zinc-400 text-slate-500
-                          dark:border-zinc-700/40 border-slate-200 border">
+                        <span key={tech} className="tech-pill px-2.5 py-1 text-[11px] font-code rounded-lg border">
                             {tech}
                         </span>
                     ))}
@@ -1173,12 +1172,11 @@ const skillCfg = {
 const SkillGroupCard = ({ group, delay }) => {
     const cfg = skillCfg[group.icon] || skillCfg.brain;
     const IconComp = cfg.icon;
-
-    const levels = [
-        { key: 'strong',    label: 'Strong',    items: group.strong,    dotColor: '#60a5fa' },
-        { key: 'working',   label: 'Working',   items: group.working,   dotColor: '#a78bfa' },
-        { key: 'exploring', label: 'Exploring', items: group.exploring, dotColor: '#52525b' }
-    ];
+    const technicalSkills = [...new Set([
+        ...group.strong,
+        ...group.working,
+        ...group.exploring
+    ])];
 
     return (
         <motion.div
@@ -1188,9 +1186,7 @@ const SkillGroupCard = ({ group, delay }) => {
             viewport={{ once: true, margin: '-40px' }}
             transition={{ delay }}
             whileHover={{ y: -4, transition: { duration: 0.2 } }}
-            className="relative rounded-2xl p-6 transition-all duration-300 overflow-hidden
-                       dark:bg-zinc-900/60 bg-white
-                       dark:border-zinc-800/60 border-slate-200/80 border"
+            className="skill-card group relative rounded-3xl p-6 sm:p-7 transition-all duration-300 overflow-hidden border"
             style={{ boxShadow: `0 0 0 1px ${cfg.accent}22, 0 4px 24px ${cfg.accent}0a` }}
         >
             {/* Left accent bar */}
@@ -1210,23 +1206,15 @@ const SkillGroupCard = ({ group, delay }) => {
                 <h3 className="font-bold dark:text-white text-slate-900 text-base">{group.title}</h3>
             </div>
 
-            {/* Levels */}
-            <div className="space-y-4">
-                {levels.map(({ key, label, items, dotColor }) => items.length > 0 && (
-                    <div key={key}>
-                        <div className="flex items-center gap-2 mb-2">
-                            <span className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-                                  style={{ background: dotColor }} />
-                            <p className="text-xs dark:text-zinc-500 text-slate-400 font-medium uppercase tracking-wider">
-                                {label}
-                            </p>
-                        </div>
-                        <div className="flex flex-wrap gap-1.5">
-                            {items.map(item => (
-                                <span key={item} className={`skill-badge-${key}`}>{item}</span>
-                            ))}
-                        </div>
-                    </div>
+            <div className="flex flex-wrap gap-2">
+                {technicalSkills.map(item => (
+                    <span
+                        key={item}
+                        className="technical-skill-badge"
+                        style={{ '--skill-accent': cfg.accent }}
+                    >
+                        {item}
+                    </span>
                 ))}
             </div>
         </motion.div>
@@ -1235,20 +1223,20 @@ const SkillGroupCard = ({ group, delay }) => {
 
 // Floating Particles — original density restored
 const FloatingParticles = () => {
-    const particles = Array.from({ length: 60 }, (_, i) => ({
+    const particles = Array.from({ length: 28 }, (_, i) => ({
         id: i,
-        size: Math.random() * 4 + 2,
-        x: Math.random() * 100,
-        y: Math.random() * 100,
-        duration: 5 + Math.random() * 8,
-        delay: Math.random() * 4,
+        size: 1 + ((i * 7) % 4),
+        x: (i * 37) % 100,
+        y: (i * 53) % 100,
+        duration: 8 + (i % 7),
+        delay: (i % 6) * 0.65,
         color: i % 4 === 0 ? 'bg-blue-400' : i % 4 === 1 ? 'bg-purple-400' : i % 4 === 2 ? 'bg-cyan-400' : 'bg-pink-400'
     }));
 
     const orbs = [
-        { x: 15, y: 20, size: 300, color: 'from-blue-500/20 to-transparent', delay: 0 },
-        { x: 80, y: 60, size: 400, color: 'from-purple-500/15 to-transparent', delay: 2 },
-        { x: 50, y: 80, size: 350, color: 'from-cyan-500/15 to-transparent', delay: 4 },
+        { x: 12, y: 18, size: 420, color: 'from-blue-500/20 to-transparent', delay: 0 },
+        { x: 88, y: 52, size: 520, color: 'from-purple-500/15 to-transparent', delay: 2 },
+        { x: 42, y: 88, size: 440, color: 'from-cyan-500/15 to-transparent', delay: 4 },
     ];
 
     return (
@@ -1262,8 +1250,8 @@ const FloatingParticles = () => {
                         left: `${orb.x}%`, top: `${orb.y}%`,
                         transform: 'translate(-50%, -50%)',
                     }}
-                    animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3], x: [0, 30, 0], y: [0, -20, 0] }}
-                    transition={{ duration: 8 + i * 2, repeat: Infinity, delay: orb.delay, ease: "easeInOut" }}
+                    animate={{ scale: [1, 1.16, 1], opacity: [0.25, 0.48, 0.25], x: [0, 34, 0], y: [0, -24, 0] }}
+                    transition={{ duration: 12 + i * 2, repeat: Infinity, delay: orb.delay, ease: "easeInOut" }}
                 />
             ))}
 
@@ -1272,13 +1260,60 @@ const FloatingParticles = () => {
                     key={p.id}
                     className={`absolute rounded-full ${p.color}`}
                     style={{ width: p.size, height: p.size, left: `${p.x}%`, top: `${p.y}%` }}
-                    animate={{ y: [0, -80, 0], x: [0, Math.sin(p.id) * 30, 0], opacity: [0.2, 0.6, 0.2], scale: [1, 1.8, 1] }}
+                    animate={{ y: [0, -70, 0], x: [0, Math.sin(p.id) * 26, 0], opacity: [0.12, 0.5, 0.12], scale: [1, 1.7, 1] }}
                     transition={{ duration: p.duration, repeat: Infinity, delay: p.delay, ease: "easeInOut" }}
                 />
             ))}
 
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.04)_1px,transparent_1px)] bg-[size:80px_80px]" />
+            <div className="ambient-grid absolute inset-0" />
         </div>
+    );
+};
+
+const HeroVisual = () => {
+    const orbitNodes = [
+        { Icon: Brain, className: 'orbit-node node-1' },
+        { Icon: Code2, className: 'orbit-node node-2' },
+        { Icon: Database, className: 'orbit-node node-3' },
+        { Icon: Eye, className: 'orbit-node node-4' },
+        { Icon: Container, className: 'orbit-node node-5' },
+        { Icon: Cloud, className: 'orbit-node node-6' },
+    ];
+
+    return (
+        <motion.div variants={scaleIn} className="hero-visual relative mx-auto" aria-hidden="true">
+            <motion.div
+                className="hero-orbit orbit-outer"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 32, repeat: Infinity, ease: 'linear' }}
+            />
+            <motion.div
+                className="hero-orbit orbit-inner"
+                animate={{ rotate: -360 }}
+                transition={{ duration: 22, repeat: Infinity, ease: 'linear' }}
+            />
+            <div className="hero-core-wrap">
+                <motion.div
+                    className="hero-core"
+                    animate={{ y: [0, -8, 0], rotate: [0, 1.5, 0] }}
+                    transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}
+                >
+                    <span>JV</span>
+                    <div className="core-scanline" />
+                </motion.div>
+            </div>
+            {orbitNodes.map(({ Icon, className }, index) => (
+                <motion.div
+                    key={className}
+                    className={className}
+                    animate={{ y: [0, index % 2 === 0 ? -8 : 8, 0] }}
+                    transition={{ duration: 4 + index * 0.35, repeat: Infinity, ease: 'easeInOut' }}
+                >
+                    <Icon className="w-5 h-5" />
+                </motion.div>
+            ))}
+            <div className="visual-glow" />
+        </motion.div>
     );
 };
 
@@ -1291,6 +1326,9 @@ function App() {
     const [lang, setLang] = useState('en');
     const [activeSection, setActiveSection] = useState('');
     const [emailCopied, setEmailCopied] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const { scrollYProgress } = useScroll();
+    const progressScale = useSpring(scrollYProgress, { stiffness: 150, damping: 30, restDelta: 0.001 });
     const t = translations[lang];
 
     useEffect(() => {
@@ -1320,8 +1358,11 @@ function App() {
     };
 
     return (
-        <div className={`min-h-screen transition-colors duration-400
+        <MotionConfig reducedMotion="user">
+        <div className={`site-shell min-h-screen transition-colors duration-500
                     ${isDark ? 'bg-zinc-950 text-white' : 'bg-slate-50 text-slate-900'}`}>
+
+            <motion.div className="scroll-progress" style={{ scaleX: progressScale }} />
 
             <FloatingParticles />
 
@@ -1338,15 +1379,11 @@ function App() {
                 initial={{ y: -80, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                className={`fixed top-0 left-0 right-0 z-50 px-6 py-3.5
-                    ${isDark
-                        ? 'bg-zinc-950/85 border-b border-zinc-800/40'
-                        : 'bg-white/85 border-b border-slate-200/80'}
-                    backdrop-blur-xl`}
+                className="fixed top-3 sm:top-4 left-0 right-0 z-50 px-3 sm:px-6"
             >
-                <div className="max-w-7xl mx-auto flex items-center justify-between">
+                <div className="nav-shell max-w-7xl mx-auto flex items-center justify-between px-3 py-2.5 sm:px-4">
                     <motion.a href="#" whileHover={{ scale: 1.03 }} className="flex items-center gap-2.5">
-                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600
+                        <div className="brand-mark w-9 h-9 rounded-xl bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-600
                            flex items-center justify-center font-bold text-white text-sm">
                             JV
                         </div>
@@ -1374,147 +1411,188 @@ function App() {
                     <div className="flex items-center gap-2">
                         <LanguageSelector currentLang={lang} setLang={setLang} />
                         <ThemeToggle isDark={isDark} setIsDark={setIsDark} />
+                        <motion.button
+                            whileTap={{ scale: 0.94 }}
+                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                            className="control-button md:hidden p-2.5"
+                            aria-label="Toggle navigation"
+                            aria-expanded={mobileMenuOpen}
+                        >
+                            <AnimatePresence mode="wait">
+                                {mobileMenuOpen ? (
+                                    <motion.div key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }}>
+                                        <X className="w-4 h-4" />
+                                    </motion.div>
+                                ) : (
+                                    <motion.div key="menu" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }}>
+                                        <Menu className="w-4 h-4" />
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </motion.button>
                     </div>
                 </div>
+
+                <AnimatePresence>
+                    {mobileMenuOpen && (
+                        <motion.div
+                            initial={{ opacity: 0, y: -10, scale: 0.97 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            exit={{ opacity: 0, y: -10, scale: 0.97 }}
+                            transition={{ duration: 0.22 }}
+                            className="mobile-menu md:hidden max-w-7xl mx-auto mt-2 p-2 rounded-2xl"
+                        >
+                            {Object.entries(t.nav).map(([key, label], index) => (
+                                <motion.a
+                                    key={key}
+                                    href={`#${key}`}
+                                    onClick={() => setMobileMenuOpen(false)}
+                                    initial={{ opacity: 0, x: -8 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: index * 0.035 }}
+                                    className={`mobile-nav-link ${activeSection === key ? 'active' : ''}`}
+                                >
+                                    <span className="mobile-nav-index">0{index + 1}</span>
+                                    <span>{label}</span>
+                                    <ChevronRight className="w-4 h-4 ml-auto" />
+                                </motion.a>
+                            ))}
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </motion.nav>
 
             {/* ═══════════════════════ MAIN ═══════════════════════ */}
             <main className="relative z-10 pt-20">
 
                 {/* ── HERO ── */}
-                <section id="hero" className="min-h-[92vh] flex items-center justify-center px-6 py-24">
+                <section id="hero" className="hero-section min-h-[94vh] flex items-center justify-center px-5 sm:px-6 py-24 sm:py-28">
                     <motion.div
                         variants={staggerContainer}
                         initial="hidden"
                         animate="visible"
-                        className="max-w-3xl mx-auto text-center"
+                        className="max-w-7xl w-full mx-auto grid lg:grid-cols-[1.08fr_.92fr] items-center gap-14 lg:gap-8"
                     >
-                        {/* Status badge */}
-                        <motion.div
-                            variants={scaleIn}
-                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full
-                                bg-green-500/10 border border-green-500/30 mb-8"
-                        >
-                            <span className="relative flex h-2 w-2">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
-                            </span>
-                            <span className="text-sm font-medium text-green-400">
-                                {t.header.status}
-                            </span>
-                        </motion.div>
-
-                        {/* Name */}
-                        <motion.h1
-                            variants={fadeInUp}
-                            className="text-5xl sm:text-7xl lg:text-8xl font-bold mb-5 tracking-tight leading-none"
-                        >
-                            <span className="dark:text-white text-slate-900">
-                                {t.header.name.split(' ')[0]}
-                            </span>
-                            <br />
-                            <span className="gradient-text">
-                                {t.header.name.split(' ').slice(1).join(' ')}
-                            </span>
-                        </motion.h1>
-
-                        {/* Role */}
-                        <motion.p
-                            variants={fadeInUp}
-                            className="text-lg sm:text-xl mb-4 font-medium dark:text-zinc-300 text-slate-700 max-w-2xl mx-auto"
-                        >
-                            {t.header.role}
-                        </motion.p>
-
-                        {/* Tech pills */}
-                        <motion.div
-                            variants={fadeInUp}
-                            className="flex flex-wrap items-center justify-center gap-2 mb-10"
-                        >
-                            {['Python', 'FastAPI', 'LLMs', 'RAG', 'NLP', 'Unity / VR', '3D Graphics'].map((tag) => (
-                                <span key={tag} className="px-3 py-1 text-xs font-code rounded-full
-                                    dark:bg-zinc-800/70 bg-slate-100
-                                    dark:border-zinc-700/50 border-slate-200 border
-                                    dark:text-zinc-400 text-slate-500">
-                                    {tag}
+                        <div className="text-center lg:text-left relative z-10">
+                            {/* Status badge */}
+                            <motion.div
+                                variants={scaleIn}
+                                className="status-badge inline-flex items-center gap-2.5 px-4 py-2 rounded-full mb-8"
+                            >
+                                <span className="relative flex h-2 w-2">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
                                 </span>
-                            ))}
-                        </motion.div>
+                                <span className="text-sm font-medium text-emerald-400">
+                                    {t.header.status}
+                                </span>
+                            </motion.div>
 
-                        {/* CTA Buttons */}
-                        <motion.div
-                            variants={fadeInUp}
-                            className="flex flex-wrap items-center justify-center gap-3 mb-10"
-                        >
-                            <motion.a
-                                href="#projects"
-                                whileHover={{ scale: 1.04, y: -2 }}
-                                whileTap={{ scale: 0.97 }}
-                                className="group flex items-center gap-2 px-6 py-3 rounded-xl
-                           bg-gradient-to-r from-blue-500 to-purple-600
-                           text-white text-sm font-medium
-                           shadow-lg shadow-blue-500/20
-                           hover:shadow-xl hover:shadow-blue-500/30
-                           transition-all duration-200"
+                            {/* Name */}
+                            <motion.h1
+                                variants={fadeInUp}
+                                className="hero-title text-6xl sm:text-7xl xl:text-8xl font-bold mb-6 tracking-[-0.055em] leading-[0.88]"
                             >
-                                <Sparkles className="w-4 h-4" />
-                                {t.header.cta}
-                                <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                            </motion.a>
+                                <span className="dark:text-white text-slate-950">
+                                    {t.header.name.split(' ')[0]}
+                                </span>
+                                <br />
+                                <span className="gradient-text">
+                                    {t.header.name.split(' ').slice(1).join(' ')}
+                                </span>
+                            </motion.h1>
 
-                            <motion.a
-                                href="/cv-joan-vila-orus.pdf"
-                                download
-                                whileHover={{ scale: 1.04, y: -2 }}
-                                whileTap={{ scale: 0.97 }}
-                                className={`flex items-center gap-2 px-6 py-3 rounded-xl
-                           text-sm font-medium border transition-all duration-200
-                           ${isDark
-                                        ? 'border-zinc-700 text-zinc-200 hover:bg-zinc-800/60'
-                                        : 'border-slate-300 text-slate-700 hover:bg-slate-100'}`}
+                            {/* Role */}
+                            <motion.p
+                                variants={fadeInUp}
+                                className="text-lg sm:text-xl mb-7 font-medium dark:text-zinc-300 text-slate-700 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
                             >
-                                {t.header.download}
-                            </motion.a>
-                        </motion.div>
+                                {t.header.role}
+                            </motion.p>
 
-                        {/* Social links */}
-                        <motion.div
-                            variants={fadeInUp}
-                            className="flex items-center justify-center gap-3"
-                        >
-                            {[
-                                { icon: Github, href: 'https://github.com/vilavilla', label: 'GitHub' },
-                                { icon: Linkedin, href: 'https://www.linkedin.com/in/joan-vila-orus-a82840278/', label: 'LinkedIn' },
-                            ].map((social) => (
+                            {/* Tech pills */}
+                            <motion.div
+                                variants={fadeInUp}
+                                className="flex flex-wrap items-center justify-center lg:justify-start gap-2 mb-9"
+                            >
+                                {['Python', 'FastAPI', 'LLMs', 'RAG', 'NLP', 'Unity / VR', '3D Graphics'].map((tag, index) => (
+                                    <motion.span
+                                        key={tag}
+                                        whileHover={{ y: -3, scale: 1.03 }}
+                                        transition={{ duration: 0.2 }}
+                                        className="hero-tech-pill px-3 py-1.5 text-xs font-code rounded-full border"
+                                    >
+                                        <span className="tech-dot" style={{ animationDelay: `${index * 0.3}s` }} />
+                                        {tag}
+                                    </motion.span>
+                                ))}
+                            </motion.div>
+
+                            {/* CTA Buttons */}
+                            <motion.div
+                                variants={fadeInUp}
+                                className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-8"
+                            >
                                 <motion.a
-                                    key={social.label}
-                                    href={social.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    whileHover={{ scale: 1.1, y: -2 }}
-                                    whileTap={{ scale: 0.95 }}
-                                    className={`p-2.5 rounded-xl border transition-all duration-200
-                                    ${isDark
-                                            ? 'bg-zinc-800/50 border-zinc-700/40 text-zinc-400 hover:text-white hover:border-zinc-600'
-                                            : 'bg-slate-100 border-slate-200 text-slate-500 hover:text-slate-900 hover:border-slate-300'}`}
-                                    aria-label={social.label}
+                                    href="#projects"
+                                    whileHover={{ scale: 1.035, y: -3 }}
+                                    whileTap={{ scale: 0.97 }}
+                                    className="primary-cta group flex items-center gap-2 px-6 py-3.5 rounded-2xl text-white text-sm font-semibold"
                                 >
-                                    <social.icon className="w-4 h-4" />
+                                    <Sparkles className="w-4 h-4" />
+                                    {t.header.cta}
+                                    <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                                 </motion.a>
-                            ))}
-                        </motion.div>
+
+                                <motion.a
+                                    href="/cv-joan-vila-orus.pdf"
+                                    download
+                                    whileHover={{ scale: 1.035, y: -3 }}
+                                    whileTap={{ scale: 0.97 }}
+                                    className="secondary-cta flex items-center gap-2 px-6 py-3.5 rounded-2xl text-sm font-semibold border"
+                                >
+                                    <Download className="w-4 h-4" />
+                                    {t.header.download}
+                                </motion.a>
+                            </motion.div>
+
+                            {/* Social links */}
+                            <motion.div variants={fadeInUp} className="flex items-center justify-center lg:justify-start gap-3">
+                                {[
+                                    { icon: Github, href: 'https://github.com/vilavilla', label: 'GitHub' },
+                                    { icon: Linkedin, href: 'https://www.linkedin.com/in/joan-vila-orus-a82840278/', label: 'LinkedIn' },
+                                ].map((social) => (
+                                    <motion.a
+                                        key={social.label}
+                                        href={social.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        whileHover={{ scale: 1.08, y: -3 }}
+                                        whileTap={{ scale: 0.95 }}
+                                        className="social-button p-3 rounded-xl border transition-all duration-200"
+                                        aria-label={social.label}
+                                    >
+                                        <social.icon className="w-4 h-4" />
+                                    </motion.a>
+                                ))}
+                            </motion.div>
+                        </div>
+
+                        <div className="hidden sm:block">
+                            <HeroVisual />
+                        </div>
                     </motion.div>
                 </section>
 
                 {/* ── ABOUT ── */}
-                <section id="about" className="py-20 px-6">
+                <section id="about" className="content-section py-24 sm:py-28 px-5 sm:px-6">
                     <div className="max-w-7xl mx-auto">
                         <motion.div
                             variants={staggerContainer}
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, margin: "-80px" }}
-                            className="grid grid-cols-1 lg:grid-cols-3 gap-5"
+                            className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6"
                         >
                             <BentoCard className="lg:col-span-2">
                                 <div className="flex items-start gap-4 mb-5">
@@ -1568,15 +1646,15 @@ function App() {
                 </section>
 
                 {/* ── EXPERIENCE ── */}
-                <section id="experience" className="py-20 px-6">
-                    <div className="max-w-3xl mx-auto">
+                <section id="experience" className="content-section section-tinted py-24 sm:py-28 px-5 sm:px-6">
+                    <div className="max-w-4xl mx-auto">
                         <motion.div
                             variants={staggerContainer}
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, margin: "-80px" }}
                         >
-                            <motion.div variants={fadeInUp} className="text-center mb-14">
+                            <motion.div variants={fadeInUp} className="section-heading text-center mb-14 sm:mb-16">
                                 <h2 className="text-3xl font-bold mb-3 dark:text-white text-slate-900">
                                     {t.experience.title}
                                 </h2>
@@ -1598,7 +1676,7 @@ function App() {
                 </section>
 
                 {/* ── PROJECTS ── */}
-                <section id="projects" className="py-20 px-6">
+                <section id="projects" className="content-section py-24 sm:py-28 px-5 sm:px-6">
                     <div className="max-w-7xl mx-auto">
                         <motion.div
                             variants={staggerContainer}
@@ -1606,14 +1684,14 @@ function App() {
                             whileInView="visible"
                             viewport={{ once: true, margin: "-80px" }}
                         >
-                            <motion.div variants={fadeInUp} className="text-center mb-14">
+                            <motion.div variants={fadeInUp} className="section-heading text-center mb-14 sm:mb-16">
                                 <h2 className="text-3xl font-bold mb-3 dark:text-white text-slate-900">
                                     {t.projects.title}
                                 </h2>
                                 <div className="w-16 h-0.5 mx-auto rounded-full bg-gradient-to-r from-blue-500 to-purple-500" />
                             </motion.div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
                                 {t.projects.items.map((project, index) => (
                                     <ProjectCard key={index} project={project} index={index} />
                                 ))}
@@ -1623,22 +1701,22 @@ function App() {
                 </section>
 
                 {/* ── SKILLS ── */}
-                <section id="skills" className="py-20 px-6">
-                    <div className="max-w-5xl mx-auto">
+                <section id="skills" className="content-section section-tinted py-24 sm:py-28 px-5 sm:px-6">
+                    <div className="max-w-6xl mx-auto">
                         <motion.div
                             variants={staggerContainer}
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, margin: "-80px" }}
                         >
-                            <motion.div variants={fadeInUp} className="text-center mb-14">
+                            <motion.div variants={fadeInUp} className="section-heading text-center mb-14 sm:mb-16">
                                 <h2 className="text-3xl font-bold mb-3 dark:text-white text-slate-900">
                                     {t.skills.title}
                                 </h2>
                                 <div className="w-16 h-0.5 mx-auto rounded-full bg-gradient-to-r from-blue-500 to-purple-500" />
                             </motion.div>
 
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
                                 {t.skills.groups.map((group, i) => (
                                     <SkillGroupCard key={group.title} group={group} delay={i * 0.07} />
                                 ))}
@@ -1648,8 +1726,8 @@ function App() {
                 </section>
 
                 {/* ── CONTACT ── */}
-                <section id="contact" className="py-20 px-6">
-                    <div className="max-w-2xl mx-auto">
+                <section id="contact" className="content-section py-24 sm:py-32 px-5 sm:px-6">
+                    <div className="max-w-3xl mx-auto">
                         <motion.div
                             variants={staggerContainer}
                             initial="hidden"
@@ -1742,6 +1820,7 @@ function App() {
                 </footer>
             </main>
         </div>
+        </MotionConfig>
     );
 }
 
