@@ -810,6 +810,27 @@ body {
   box-shadow: 0 10px 24px rgba(var(--brand-rgb), 0.1);
 }
 
+.project-availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid rgba(245, 158, 11, 0.28);
+  border-radius: 0.75rem;
+  background: rgba(245, 158, 11, 0.09);
+  color: #b45309;
+  font-size: 0.7rem;
+  font-weight: 650;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.dark .project-availability {
+  border-color: rgba(251, 191, 36, 0.28);
+  background: rgba(245, 158, 11, 0.1);
+  color: #fbbf24;
+}
+
 .arch-flow {
   gap: 0.35rem;
 }

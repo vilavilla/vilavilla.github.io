@@ -5,7 +5,7 @@ import {
     Briefcase, GraduationCap, Code2, Brain, Terminal, Cpu,
     Eye, Gamepad2, Bot, Database, Cloud, Container,
     ChevronRight, Sparkles, MapPin, Calendar, ArrowRight, Copy, Check,
-    Menu, X, Download
+    Menu, X, Download, LockKeyhole
 } from 'lucide-react';
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -23,16 +23,16 @@ const translations = {
         },
         header: {
             name: 'Joan Vila Orús',
-            role: 'AI / Backend Engineer building LLM systems and immersive 3D applications.',
-            supporting: 'Computer Engineering student at FIB-UPC with experience in Python, FastAPI, LLMs, RAG, clinical NLP pipelines, Unity/VR and 3D graphics.',
+            role: 'AI / Backend Engineer building LLM systems and immersive 3D applications',
+            supporting: 'Computer Engineering student at FIB-UPC with experience in Python, FastAPI, LLMs, RAG, clinical NLP pipelines, Unity/VR and 3D graphics',
             status: 'Open to Work / Research',
             cta: 'View Projects',
             download: 'Download CV'
         },
         about: {
             title: 'About Me',
-            description: 'I build end-to-end AI systems — backend, model integration, data pipelines and real user-facing interaction. Main focus: applied LLMs, computer vision, VR/AR and tools that solve real problems.',
-            passion: 'Passionate about pushing the boundaries of human-computer interaction through immersive technologies and intelligent systems.',
+            description: 'I build end-to-end AI systems — backend, model integration, data pipelines and real user-facing interaction. Main focus: applied LLMs, computer vision, VR/AR and tools that solve real problems',
+            passion: 'Passionate about pushing the boundaries of human-computer interaction through immersive technologies and intelligent systems',
             location: 'Barcelona, Spain',
             stat1: '1+ yr', stat1label: 'Research Exp.',
             stat2: '4+', stat2label: 'AI Systems Built'
@@ -44,7 +44,7 @@ const translations = {
                     org: 'Hospital Clínic de Barcelona',
                     subtitle: 'Research Unit',
                     role: 'AI / NLP Research Intern',
-                    desc: 'Clinical NLP pipelines for document anonymization — Python, AI models, benchmarking and evaluation in a medical context.',
+                    desc: 'Clinical NLP pipelines for document anonymization — Python, AI models, benchmarking and evaluation in a medical context',
                     period: 'Oct 2025 – Feb 2026',
                     type: 'work'
                 },
@@ -52,7 +52,7 @@ const translations = {
                     org: 'Sapienza Università di Roma',
                     subtitle: 'Erasmus+ Scholar',
                     role: 'Exchange Student',
-                    desc: 'AI, data management, robotics and computer vision coursework.',
+                    desc: 'AI, data management, robotics and computer vision coursework',
                     period: 'Feb 2026 – Jul 2026',
                     type: 'education'
                 },
@@ -60,7 +60,7 @@ const translations = {
                     org: 'UPC – FIB',
                     subtitle: 'Barcelona',
                     role: 'Computer Engineering Degree',
-                    desc: 'Algorithms, Python, C++, computer graphics, ML and system design.',
+                    desc: 'Algorithms, Python, C++, computer graphics, ML and system design',
                     period: '2022 – Present',
                     type: 'education'
                 }
@@ -73,37 +73,38 @@ const translations = {
                     name: 'Embodied AI VR Assistant',
                     tag: 'Thesis Project',
                     tagColor: 'blue',
-                    desc: 'AI-powered interactive guide for a VR anatomy simulation with voice interaction and RAG.',
+                    desc: 'AI-powered interactive guide for a VR anatomy simulation with voice interaction and RAG',
                     arch: ['Unity VR', 'FastAPI Backend', 'RAG Retrieval', 'Local LLM', 'Voice Response'],
                     tech: ['Unity', 'C#', 'Python', 'FastAPI', 'RAG', 'ChromaDB', 'Whisper', 'Piper', 'Ollama'],
-                    link: 'https://github.com/vilavilla'
+                    link: 'https://github.com/vilavilla/vr-embodied-ai-agent'
                 },
                 {
                     name: 'Clinical NLP Anonymization Pipeline',
                     tag: 'Research Internship',
                     tagColor: 'amber',
-                    desc: 'AI pipeline to anonymize sensitive clinical documents in a medical research context.',
+                    desc: 'AI pipeline to anonymize sensitive clinical documents in a medical research context',
                     arch: ['Clinical Docs', 'Python Pipeline', 'AI Anonymization', 'Benchmarks', 'Evaluation'],
                     tech: ['Python', 'PyTorch', 'Transformers', 'NLP', 'Gemini API', 'AWS', 'data pipelines'],
-                    link: 'https://github.com/vilavilla'
+                    availability: 'Completed · Private repository',
+                    link: null
                 },
                 {
                     name: 'AI Performance Coach',
                     tag: 'Work in Progress',
                     tagColor: 'green',
-                    desc: 'Training assistant that generates adaptive workout plans using LLM reasoning and user goals.',
+                    desc: 'Training assistant that generates adaptive workout plans using LLM reasoning and user goals',
                     arch: ['User Goals', 'Constraints', 'LLM Reasoning', 'Progression Rules', 'Workout Plan'],
                     tech: ['Python', 'FastAPI', 'LangChain', 'LLM APIs', 'prompt engineering', 'RAG', 'REST APIs'],
-                    link: 'https://github.com/vilavilla'
+                    link: 'https://github.com/vilavilla/ENTRENADOR'
                 },
                 {
                     name: 'Assistive Computer Vision',
                     tag: 'Computer Vision',
                     tagColor: 'purple',
-                    desc: 'Real-time object detection system designed to assist visually impaired users navigate.',
+                    desc: 'Real-time object detection system designed to assist visually impaired users navigate',
                     arch: ['Camera Input', 'YOLOv8 Detection', 'Object Filtering', 'Audio Output'],
                     tech: ['Python', 'YOLOv8', 'OpenCV', 'TensorFlow'],
-                    link: 'https://github.com/vilavilla'
+                    link: 'https://github.com/vilavilla/BlindNav'
                 }
             ]
         },
@@ -144,7 +145,7 @@ const translations = {
         },
         contact: {
             title: "Let's Connect",
-            subtitle: 'Open to AI, backend, research and immersive technology opportunities.',
+            subtitle: 'Open to AI, backend, research and immersive technology opportunities',
             copyBtn: 'Click to copy email',
             copiedBtn: 'Email copied!'
         },
@@ -164,16 +165,16 @@ const translations = {
         },
         header: {
             name: 'Joan Vila Orús',
-            role: 'Ingeniero IA / Backend construyendo sistemas LLM y aplicaciones 3D inmersivas.',
-            supporting: 'Estudiante de Ingeniería Informática en FIB-UPC con experiencia en Python, FastAPI, LLMs, RAG, NLP clínico, Unity/VR y gráficos 3D.',
+            role: 'Ingeniero IA / Backend construyendo sistemas LLM y aplicaciones 3D inmersivas',
+            supporting: 'Estudiante de Ingeniería Informática en FIB-UPC con experiencia en Python, FastAPI, LLMs, RAG, NLP clínico, Unity/VR y gráficos 3D',
             status: 'Abierto a Trabajo / Investigación',
             cta: 'Ver Proyectos',
             download: 'Descargar CV'
         },
         about: {
             title: 'Sobre Mí',
-            description: 'Construyo sistemas de IA de extremo a extremo — backend, modelos, pipelines e interacción real. Foco en LLMs aplicados, visión por computador, VR/AR y herramientas que resuelven problemas reales.',
-            passion: 'Apasionado por expandir los límites de la interacción humano-computadora a través de tecnologías inmersivas y sistemas inteligentes.',
+            description: 'Construyo sistemas de IA de extremo a extremo — backend, modelos, pipelines e interacción real. Foco en LLMs aplicados, visión por computador, VR/AR y herramientas que resuelven problemas reales',
+            passion: 'Apasionado por expandir los límites de la interacción humano-computadora a través de tecnologías inmersivas y sistemas inteligentes',
             location: 'Barcelona, España',
             stat1: '+1 año', stat1label: 'Exp. Investigación',
             stat2: '4+', stat2label: 'Sistemas IA'
@@ -185,7 +186,7 @@ const translations = {
                     org: 'Hospital Clínic de Barcelona',
                     subtitle: 'Unidad de Investigación',
                     role: 'Investigador IA / NLP (Prácticas)',
-                    desc: 'Pipelines de NLP clínico para anonimización de documentos — Python, modelos de IA y benchmarking en contexto médico.',
+                    desc: 'Pipelines de NLP clínico para anonimización de documentos — Python, modelos de IA y benchmarking en contexto médico',
                     period: 'Oct 2025 – Feb 2026',
                     type: 'work'
                 },
@@ -193,7 +194,7 @@ const translations = {
                     org: 'Sapienza Università di Roma',
                     subtitle: 'Beca Erasmus+',
                     role: 'Estudiante de Intercambio',
-                    desc: 'IA, gestión de datos, robótica y visión por computador.',
+                    desc: 'IA, gestión de datos, robótica y visión por computador',
                     period: 'Feb 2026 – Jul 2026',
                     type: 'education'
                 },
@@ -201,7 +202,7 @@ const translations = {
                     org: 'UPC – FIB',
                     subtitle: 'Barcelona',
                     role: 'Grado en Ingeniería Informática',
-                    desc: 'Algoritmos, Python, C++, gráficos, ML y diseño de sistemas.',
+                    desc: 'Algoritmos, Python, C++, gráficos, ML y diseño de sistemas',
                     period: '2022 – Presente',
                     type: 'education'
                 }
@@ -214,37 +215,38 @@ const translations = {
                     name: 'Asistente VR con IA Encarnada',
                     tag: 'Proyecto de Tesis',
                     tagColor: 'blue',
-                    desc: 'Guía interactiva con IA para una simulación de anatomía en VR. Construida con Unity/C#, Python/FastAPI, LLMs locales, RAG, speech-to-text y text-to-speech.',
+                    desc: 'Guía interactiva con IA para una simulación de anatomía en VR. Construida con Unity/C#, Python/FastAPI, LLMs locales, RAG, speech-to-text y text-to-speech',
                     arch: ['Unity VR', 'Backend FastAPI', 'Recuperación RAG', 'LLM Local', 'Respuesta de Voz'],
                     tech: ['Unity', 'C#', 'Python', 'FastAPI', 'RAG', 'ChromaDB', 'Whisper', 'Piper', 'Ollama'],
-                    link: 'https://github.com/vilavilla'
+                    link: 'https://github.com/vilavilla/vr-embodied-ai-agent'
                 },
                 {
                     name: 'Pipeline de Anonimización NLP Clínico',
                     tag: 'Prácticas de Investigación',
                     tagColor: 'amber',
-                    desc: 'Pipeline para procesar y anonimizar documentos clínicos usando técnicas de IA/NLP. Incluyó scripts Python, benchmarking de modelos, evaluación de LLMs y flujos de procesamiento con privacidad.',
+                    desc: 'Pipeline para procesar y anonimizar documentos clínicos usando técnicas de IA/NLP. Incluyó scripts Python, benchmarking de modelos, evaluación de LLMs y flujos de procesamiento con privacidad',
                     arch: ['Documentos Clínicos', 'Pipeline Python', 'Anonimización IA', 'Benchmarks', 'Evaluación'],
                     tech: ['Python', 'PyTorch', 'Transformers', 'NLP', 'Gemini API', 'AWS', 'pipelines'],
-                    link: 'https://github.com/vilavilla'
+                    availability: 'Completado · Repositorio privado',
+                    link: null
                 },
                 {
                     name: 'AI Performance Coach',
                     tag: 'En Desarrollo',
                     tagColor: 'green',
-                    desc: 'Asistente de entrenamiento con IA que genera planes de ejercicio adaptativos usando objetivos del usuario, restricciones, reglas de progresión y razonamiento LLM.',
+                    desc: 'Asistente de entrenamiento con IA que genera planes de ejercicio adaptativos usando objetivos del usuario, restricciones, reglas de progresión y razonamiento LLM',
                     arch: ['Objetivos', 'Restricciones', 'Razonamiento LLM', 'Reglas Progresión', 'Plan'],
                     tech: ['Python', 'FastAPI', 'LangChain', 'LLM APIs', 'Prompt Eng.', 'RAG', 'REST APIs'],
-                    link: 'https://github.com/vilavilla'
+                    link: 'https://github.com/vilavilla/ENTRENADOR'
                 },
                 {
                     name: 'Visión por Computador Asistiva',
                     tag: 'Visión por Computador',
                     tagColor: 'purple',
-                    desc: 'Prototipo de detección de objetos para navegación asistiva, enfocado en detectar objetos relevantes para personas con discapacidad visual.',
+                    desc: 'Prototipo de detección de objetos para navegación asistiva, enfocado en detectar objetos relevantes para personas con discapacidad visual',
                     arch: ['Entrada Cámara', 'Detección YOLOv8', 'Filtrado', 'Salida de Audio'],
                     tech: ['Python', 'YOLOv8', 'OpenCV', 'TensorFlow'],
-                    link: 'https://github.com/vilavilla'
+                    link: 'https://github.com/vilavilla/BlindNav'
                 }
             ]
         },
@@ -283,7 +285,7 @@ const translations = {
         },
         contact: {
             title: 'Conectemos',
-            subtitle: 'Abierto a oportunidades en IA, backend, investigación y tecnologías inmersivas.',
+            subtitle: 'Abierto a oportunidades en IA, backend, investigación y tecnologías inmersivas',
             copyBtn: 'Clic para copiar email',
             copiedBtn: '¡Email copiado!'
         },
@@ -303,16 +305,16 @@ const translations = {
         },
         header: {
             name: 'Joan Vila Orús',
-            role: 'Enginyer IA / Backend construint sistemes LLM i aplicacions 3D immersives.',
-            supporting: "Estudiant d'Enginyeria Informàtica a la FIB-UPC amb experiència en Python, FastAPI, LLMs, RAG, NLP clínic, Unity/VR i gràfics 3D.",
+            role: 'Enginyer IA / Backend construint sistemes LLM i aplicacions 3D immersives',
+            supporting: "Estudiant d'Enginyeria Informàtica a la FIB-UPC amb experiència en Python, FastAPI, LLMs, RAG, NLP clínic, Unity/VR i gràfics 3D",
             status: 'Obert a Treball / Recerca',
             cta: 'Veure Projectes',
             download: 'Descarregar CV'
         },
         about: {
             title: 'Sobre Mi',
-            description: "Construeixo sistemes d'IA d'extrem a extrem — backend, models, pipelines i interacció real. Foco en LLMs aplicats, visió per computador, VR/AR i eines que resolen problemes reals.",
-            passion: "Apassionat per expandir els límits de la interacció humà-ordinador a través de tecnologies immersives i sistemes intel·ligents.",
+            description: "Construeixo sistemes d'IA d'extrem a extrem — backend, models, pipelines i interacció real. Foco en LLMs aplicats, visió per computador, VR/AR i eines que resolen problemes reals",
+            passion: "Apassionat per expandir els límits de la interacció humà-ordinador a través de tecnologies immersives i sistemes intel·ligents",
             location: 'Barcelona, Espanya',
             stat1: '+1 any', stat1label: 'Exp. Recerca',
             stat2: '4+', stat2label: 'Sistemes IA'
@@ -324,7 +326,7 @@ const translations = {
                     org: 'Hospital Clínic de Barcelona',
                     subtitle: 'Unitat de Recerca',
                     role: 'Investigador IA / NLP (Pràctiques)',
-                    desc: "Pipelines de NLP clínic per anonimitzar documents — Python, models d'IA i benchmarking en context mèdic.",
+                    desc: "Pipelines de NLP clínic per anonimitzar documents — Python, models d'IA i benchmarking en context mèdic",
                     period: 'Oct 2025 – Feb 2026',
                     type: 'work'
                 },
@@ -332,7 +334,7 @@ const translations = {
                     org: 'Sapienza Università di Roma',
                     subtitle: 'Beca Erasmus+',
                     role: "Estudiant d'Intercanvi",
-                    desc: 'IA, gestió de dades, robòtica i visió per computador.',
+                    desc: 'IA, gestió de dades, robòtica i visió per computador',
                     period: 'Feb 2026 – Jul 2026',
                     type: 'education'
                 },
@@ -340,7 +342,7 @@ const translations = {
                     org: 'UPC – FIB',
                     subtitle: 'Barcelona',
                     role: "Grau en Enginyeria Informàtica",
-                    desc: "Algorismes, Python, C++, gràfics, ML i disseny de sistemes.",
+                    desc: "Algorismes, Python, C++, gràfics, ML i disseny de sistemes",
                     period: '2022 – Present',
                     type: 'education'
                 }
@@ -353,37 +355,38 @@ const translations = {
                     name: 'Assistent VR amb IA Encarnada',
                     tag: 'Projecte de Tesi',
                     tagColor: 'blue',
-                    desc: "Guia interactiva amb IA per a una simulació d'anatomia en VR. Construïda amb Unity/C#, Python/FastAPI, LLMs locals, RAG, speech-to-text i text-to-speech.",
+                    desc: "Guia interactiva amb IA per a una simulació d'anatomia en VR. Construïda amb Unity/C#, Python/FastAPI, LLMs locals, RAG, speech-to-text i text-to-speech",
                     arch: ['Unity VR', 'Backend FastAPI', 'Recuperació RAG', 'LLM Local', 'Resposta de Veu'],
                     tech: ['Unity', 'C#', 'Python', 'FastAPI', 'RAG', 'ChromaDB', 'Whisper', 'Piper', 'Ollama'],
-                    link: 'https://github.com/vilavilla'
+                    link: 'https://github.com/vilavilla/vr-embodied-ai-agent'
                 },
                 {
                     name: 'Pipeline NLP Clínic',
                     tag: 'Pràctiques de Recerca',
                     tagColor: 'amber',
-                    desc: "Pipeline per processar i anonimitzar documents clínics usant tècniques d'IA/NLP. Va incloure scripts Python, benchmarking de models i fluxos d'avaluació amb privacitat.",
+                    desc: "Pipeline per processar i anonimitzar documents clínics usant tècniques d'IA/NLP. Va incloure scripts Python, benchmarking de models i fluxos d'avaluació amb privacitat",
                     arch: ['Documents Clínics', 'Pipeline Python', 'Anonimització IA', 'Benchmarks', 'Avaluació'],
                     tech: ['Python', 'PyTorch', 'Transformers', 'NLP', 'Gemini API', 'AWS', 'pipelines'],
-                    link: 'https://github.com/vilavilla'
+                    availability: 'Completat · Repositori privat',
+                    link: null
                 },
                 {
                     name: 'AI Performance Coach',
                     tag: 'En Desenvolupament',
                     tagColor: 'green',
-                    desc: "Assistent d'entrenament amb IA que genera plans d'exercici adaptatius usant objectius, restriccions, regles de progressió i raonament LLM.",
+                    desc: "Assistent d'entrenament amb IA que genera plans d'exercici adaptatius usant objectius, restriccions, regles de progressió i raonament LLM",
                     arch: ['Objectius', 'Restriccions', 'Raonament LLM', 'Regles Progressió', 'Pla'],
                     tech: ['Python', 'FastAPI', 'LangChain', 'LLM APIs', 'Prompt Eng.', 'RAG', 'REST APIs'],
-                    link: 'https://github.com/vilavilla'
+                    link: 'https://github.com/vilavilla/ENTRENADOR'
                 },
                 {
                     name: 'Visió per Computador Assistiva',
                     tag: 'Visió per Computador',
                     tagColor: 'purple',
-                    desc: "Prototip de detecció d'objectes per a navegació assistiva, enfocat a detectar objectes rellevants per a persones amb discapacitat visual.",
+                    desc: "Prototip de detecció d'objectes per a navegació assistiva, enfocat a detectar objectes rellevants per a persones amb discapacitat visual",
                     arch: ['Entrada Càmera', 'Detecció YOLOv8', 'Filtrat', 'Sortida Àudio'],
                     tech: ['Python', 'YOLOv8', 'OpenCV', 'TensorFlow'],
-                    link: 'https://github.com/vilavilla'
+                    link: 'https://github.com/vilavilla/BlindNav'
                 }
             ]
         },
@@ -422,7 +425,7 @@ const translations = {
         },
         contact: {
             title: 'Connectem',
-            subtitle: 'Obert a oportunitats en IA, backend, recerca i tecnologies immersives.',
+            subtitle: 'Obert a oportunitats en IA, backend, recerca i tecnologies immersives',
             copyBtn: 'Clic per copiar email',
             copiedBtn: 'Email copiat!'
         },
@@ -442,16 +445,16 @@ const translations = {
         },
         header: {
             name: 'Joan Vila Orús',
-            role: 'Ingegnere IA / Backend che sviluppa sistemi LLM e applicazioni 3D immersive.',
-            supporting: 'Studente di Ingegneria Informatica alla FIB-UPC con esperienza in Python, FastAPI, LLMs, RAG, NLP clinico, Unity/VR e grafica 3D.',
+            role: 'Ingegnere IA / Backend che sviluppa sistemi LLM e applicazioni 3D immersive',
+            supporting: 'Studente di Ingegneria Informatica alla FIB-UPC con esperienza in Python, FastAPI, LLMs, RAG, NLP clinico, Unity/VR e grafica 3D',
             status: 'Disponibile per Lavoro / Ricerca',
             cta: 'Vedi Progetti',
             download: 'Scarica CV'
         },
         about: {
             title: 'Chi Sono',
-            description: "Costruisco sistemi IA end-to-end — backend, modelli, pipeline e interazione reale. Focus su LLM applicati, computer vision, VR/AR e strumenti che risolvono problemi reali.",
-            passion: "Appassionato nel superare i confini dell'interazione uomo-computer attraverso tecnologie immersive e sistemi intelligenti.",
+            description: "Costruisco sistemi IA end-to-end — backend, modelli, pipeline e interazione reale. Focus su LLM applicati, computer vision, VR/AR e strumenti che risolvono problemi reali",
+            passion: "Appassionato nel superare i confini dell'interazione uomo-computer attraverso tecnologie immersive e sistemi intelligenti",
             location: 'Barcellona, Spagna',
             stat1: '+1 anno', stat1label: 'Esp. Ricerca',
             stat2: '4+', stat2label: 'Sistemi IA'
@@ -463,7 +466,7 @@ const translations = {
                     org: 'Hospital Clínic de Barcelona',
                     subtitle: 'Unità di Ricerca',
                     role: 'Ricercatore IA / NLP (Stage)',
-                    desc: 'Pipeline NLP clinico per anonimizzazione documenti — Python, modelli IA e benchmarking in ambito medico.',
+                    desc: 'Pipeline NLP clinico per anonimizzazione documenti — Python, modelli IA e benchmarking in ambito medico',
                     period: 'Ott 2025 – Feb 2026',
                     type: 'work'
                 },
@@ -471,7 +474,7 @@ const translations = {
                     org: 'Sapienza Università di Roma',
                     subtitle: 'Borsa Erasmus+',
                     role: 'Studente di Scambio',
-                    desc: 'IA, gestione dati, robotica e computer vision.',
+                    desc: 'IA, gestione dati, robotica e computer vision',
                     period: 'Feb 2026 – Lug 2026',
                     type: 'education'
                 },
@@ -479,7 +482,7 @@ const translations = {
                     org: 'UPC – FIB',
                     subtitle: 'Barcellona',
                     role: 'Laurea in Ingegneria Informatica',
-                    desc: 'Algoritmi, Python, C++, computer graphics, ML e progettazione sistemi.',
+                    desc: 'Algoritmi, Python, C++, computer graphics, ML e progettazione sistemi',
                     period: '2022 – Presente',
                     type: 'education'
                 }
@@ -492,37 +495,38 @@ const translations = {
                     name: 'Assistente VR con IA Embodied',
                     tag: 'Progetto di Tesi',
                     tagColor: 'blue',
-                    desc: 'Guida interattiva con IA per una simulazione VR di anatomia. Realizzata con Unity/C#, Python/FastAPI, LLMs locali, RAG, speech-to-text e text-to-speech.',
+                    desc: 'Guida interattiva con IA per una simulazione VR di anatomia. Realizzata con Unity/C#, Python/FastAPI, LLMs locali, RAG, speech-to-text e text-to-speech',
                     arch: ['Unity VR', 'Backend FastAPI', 'RAG Retrieval', 'LLM Locale', 'Risposta Vocale'],
                     tech: ['Unity', 'C#', 'Python', 'FastAPI', 'RAG', 'ChromaDB', 'Whisper', 'Piper', 'Ollama'],
-                    link: 'https://github.com/vilavilla'
+                    link: 'https://github.com/vilavilla/vr-embodied-ai-agent'
                 },
                 {
                     name: 'Pipeline NLP Clinico',
                     tag: 'Stage di Ricerca',
                     tagColor: 'amber',
-                    desc: 'Pipeline per processare e anonimizzare documenti clinici con tecniche IA/NLP. Include script Python, benchmarking di modelli, valutazione LLM e flussi di elaborazione incentrati sulla privacy.',
+                    desc: 'Pipeline per processare e anonimizzare documenti clinici con tecniche IA/NLP. Include script Python, benchmarking di modelli, valutazione LLM e flussi di elaborazione incentrati sulla privacy',
                     arch: ['Doc. Clinici', 'Pipeline Python', 'Anonimizzazione IA', 'Benchmarks', 'Valutazione'],
                     tech: ['Python', 'PyTorch', 'Transformers', 'NLP', 'Gemini API', 'AWS', 'pipeline'],
-                    link: 'https://github.com/vilavilla'
+                    availability: 'Completato · Repository privato',
+                    link: null
                 },
                 {
                     name: 'AI Performance Coach',
                     tag: 'In Sviluppo',
                     tagColor: 'green',
-                    desc: "Assistente di allenamento basato su IA che genera piani di workout adattativi usando obiettivi utente, vincoli, regole di progressione e ragionamento LLM.",
+                    desc: "Assistente di allenamento basato su IA che genera piani di workout adattativi usando obiettivi utente, vincoli, regole di progressione e ragionamento LLM",
                     arch: ['Obiettivi', 'Vincoli', 'Ragionamento LLM', 'Regole Progressione', 'Piano'],
                     tech: ['Python', 'FastAPI', 'LangChain', 'LLM APIs', 'Prompt Eng.', 'RAG', 'REST APIs'],
-                    link: 'https://github.com/vilavilla'
+                    link: 'https://github.com/vilavilla/ENTRENADOR'
                 },
                 {
                     name: 'Computer Vision Assistiva',
                     tag: 'Computer Vision',
                     tagColor: 'purple',
-                    desc: 'Prototipo di rilevamento oggetti per navigazione assistiva, focalizzato sul rilevamento in tempo reale di oggetti rilevanti per persone ipovedenti.',
+                    desc: 'Prototipo di rilevamento oggetti per navigazione assistiva, focalizzato sul rilevamento in tempo reale di oggetti rilevanti per persone ipovedenti',
                     arch: ['Input Fotocamera', 'Rilevamento YOLOv8', 'Filtraggio', 'Output Audio'],
                     tech: ['Python', 'YOLOv8', 'OpenCV', 'TensorFlow'],
-                    link: 'https://github.com/vilavilla'
+                    link: 'https://github.com/vilavilla/BlindNav'
                 }
             ]
         },
@@ -561,7 +565,7 @@ const translations = {
         },
         contact: {
             title: 'Connettiamoci',
-            subtitle: 'Disponibile per opportunità in IA, backend, ricerca e tecnologie immersive.',
+            subtitle: 'Disponibile per opportunità in IA, backend, ricerca e tecnologie immersive',
             copyBtn: 'Clic per copiare email',
             copiedBtn: 'Email copiata!'
         },
@@ -581,16 +585,16 @@ const translations = {
         },
         header: {
             name: 'Joan Vila Orús',
-            role: 'Ingénieur IA / Backend développant des systèmes LLM et applications 3D immersives.',
-            supporting: 'Étudiant en Ingénierie Informatique à FIB-UPC avec expérience en Python, FastAPI, LLMs, RAG, NLP clinique, Unity/VR et graphiques 3D.',
+            role: 'Ingénieur IA / Backend développant des systèmes LLM et applications 3D immersives',
+            supporting: 'Étudiant en Ingénierie Informatique à FIB-UPC avec expérience en Python, FastAPI, LLMs, RAG, NLP clinique, Unity/VR et graphiques 3D',
             status: 'Ouvert aux Opportunités / Recherche',
             cta: 'Voir Projets',
             download: 'Télécharger CV'
         },
         about: {
             title: 'À Propos',
-            description: "Je construis des systèmes IA de bout en bout — backend, modèles, pipelines et interaction réelle. Focus sur LLMs appliqués, vision par ordinateur, VR/AR et outils qui résolvent de vrais problèmes.",
-            passion: "Passionné par repousser les limites de l'interaction homme-machine grâce aux technologies immersives et aux systèmes intelligents.",
+            description: "Je construis des systèmes IA de bout en bout — backend, modèles, pipelines et interaction réelle. Focus sur LLMs appliqués, vision par ordinateur, VR/AR et outils qui résolvent de vrais problèmes",
+            passion: "Passionné par repousser les limites de l'interaction homme-machine grâce aux technologies immersives et aux systèmes intelligents",
             location: 'Barcelone, Espagne',
             stat1: '+1 an', stat1label: 'Exp. Recherche',
             stat2: '4+', stat2label: 'Systèmes IA'
@@ -602,7 +606,7 @@ const translations = {
                     org: 'Hospital Clínic de Barcelona',
                     subtitle: 'Unité de Recherche',
                     role: 'Chercheur IA / NLP (Stage)',
-                    desc: "Pipelines NLP cliniques pour l'anonymisation de documents — Python, modèles IA et benchmarks en contexte médical.",
+                    desc: "Pipelines NLP cliniques pour l'anonymisation de documents — Python, modèles IA et benchmarks en contexte médical",
                     period: 'Oct 2025 – Fév 2026',
                     type: 'work'
                 },
@@ -610,7 +614,7 @@ const translations = {
                     org: 'Sapienza Università di Roma',
                     subtitle: 'Bourse Erasmus+',
                     role: "Étudiant d'Échange",
-                    desc: "IA, gestion des données, robotique et vision par ordinateur.",
+                    desc: "IA, gestion des données, robotique et vision par ordinateur",
                     period: 'Fév 2026 – Juil 2026',
                     type: 'education'
                 },
@@ -618,7 +622,7 @@ const translations = {
                     org: 'UPC – FIB',
                     subtitle: 'Barcelone',
                     role: "Licence en Ingénierie Informatique",
-                    desc: "Algorithmes, Python, C++, infographie, ML et conception de systèmes.",
+                    desc: "Algorithmes, Python, C++, infographie, ML et conception de systèmes",
                     period: '2022 – Présent',
                     type: 'education'
                 }
@@ -631,37 +635,38 @@ const translations = {
                     name: 'Assistant VR IA Embodied',
                     tag: 'Projet de Thèse',
                     tagColor: 'blue',
-                    desc: "Guide interactif IA pour une simulation VR d'anatomie. Construit avec Unity/C#, Python/FastAPI, LLMs locaux, RAG, speech-to-text et text-to-speech.",
+                    desc: "Guide interactif IA pour une simulation VR d'anatomie. Construit avec Unity/C#, Python/FastAPI, LLMs locaux, RAG, speech-to-text et text-to-speech",
                     arch: ['Unity VR', 'Backend FastAPI', 'Récupération RAG', 'LLM Local', 'Réponse Vocale'],
                     tech: ['Unity', 'C#', 'Python', 'FastAPI', 'RAG', 'ChromaDB', 'Whisper', 'Piper', 'Ollama'],
-                    link: 'https://github.com/vilavilla'
+                    link: 'https://github.com/vilavilla/vr-embodied-ai-agent'
                 },
                 {
                     name: 'Pipeline NLP Clinique',
                     tag: 'Stage de Recherche',
                     tagColor: 'amber',
-                    desc: "Pipeline pour traiter et anonymiser des documents cliniques avec des techniques IA/NLP. Inclut des scripts Python, benchmarking de modèles, évaluation LLM et flux de traitement axés sur la confidentialité.",
+                    desc: "Pipeline pour traiter et anonymiser des documents cliniques avec des techniques IA/NLP. Inclut des scripts Python, benchmarking de modèles, évaluation LLM et flux de traitement axés sur la confidentialité",
                     arch: ['Doc. Cliniques', 'Pipeline Python', 'Anonymisation IA', 'Benchmarks', 'Évaluation'],
                     tech: ['Python', 'PyTorch', 'Transformers', 'NLP', 'Gemini API', 'AWS', 'pipelines'],
-                    link: 'https://github.com/vilavilla'
+                    availability: 'Terminé · Dépôt privé',
+                    link: null
                 },
                 {
                     name: 'AI Performance Coach',
                     tag: 'En Cours',
                     tagColor: 'green',
-                    desc: "Assistant d'entraînement IA qui génère des plans de workout adaptatifs via objectifs utilisateur, contraintes, règles de progression et raisonnement LLM.",
+                    desc: "Assistant d'entraînement IA qui génère des plans de workout adaptatifs via objectifs utilisateur, contraintes, règles de progression et raisonnement LLM",
                     arch: ['Objectifs', 'Contraintes', 'Raisonnement LLM', 'Règles Progression', 'Plan'],
                     tech: ['Python', 'FastAPI', 'LangChain', 'LLM APIs', 'Prompt Eng.', 'RAG', 'REST APIs'],
-                    link: 'https://github.com/vilavilla'
+                    link: 'https://github.com/vilavilla/ENTRENADOR'
                 },
                 {
                     name: 'Vision par Ordinateur Assistive',
                     tag: 'Vision par Ordinateur',
                     tagColor: 'purple',
-                    desc: "Prototype de détection d'objets pour la navigation assistive, axé sur la détection d'objets pertinents pour les malvoyants en temps réel.",
+                    desc: "Prototype de détection d'objets pour la navigation assistive, axé sur la détection d'objets pertinents pour les malvoyants en temps réel",
                     arch: ["Entrée Caméra", "Détection YOLOv8", "Filtrage", "Sortie Audio"],
                     tech: ['Python', 'YOLOv8', 'OpenCV', 'TensorFlow'],
-                    link: 'https://github.com/vilavilla'
+                    link: 'https://github.com/vilavilla/BlindNav'
                 }
             ]
         },
@@ -700,7 +705,7 @@ const translations = {
         },
         contact: {
             title: 'Connectons-nous',
-            subtitle: 'Ouvert aux opportunités en IA, backend, recherche et technologies immersives.',
+            subtitle: 'Ouvert aux opportunités en IA, backend, recherche et technologies immersives',
             copyBtn: 'Cliquer pour copier email',
             copiedBtn: 'Email copié !'
         },
@@ -720,16 +725,16 @@ const translations = {
         },
         header: {
             name: 'Joan Vila Orús',
-            role: 'KI / Backend Engineer, der LLM-Systeme und immersive 3D-Anwendungen entwickelt.',
-            supporting: 'Informatikstudent an der FIB-UPC mit Erfahrung in Python, FastAPI, LLMs, RAG, klinischem NLP, Unity/VR und 3D-Grafik.',
+            role: 'KI / Backend Engineer, der LLM-Systeme und immersive 3D-Anwendungen entwickelt',
+            supporting: 'Informatikstudent an der FIB-UPC mit Erfahrung in Python, FastAPI, LLMs, RAG, klinischem NLP, Unity/VR und 3D-Grafik',
             status: 'Offen für Arbeit / Forschung',
             cta: 'Projekte Ansehen',
             download: 'CV Herunterladen'
         },
         about: {
             title: 'Über Mich',
-            description: 'Ich baue KI-Systeme von Anfang bis Ende — Backend, Modellintegration, Datenpipelines und reale Nutzerinteraktion. Fokus auf angewandte LLMs, Computer Vision, VR/AR und Tools, die echte Probleme lösen.',
-            passion: 'Leidenschaftlich daran interessiert, die Grenzen der Mensch-Computer-Interaktion durch immersive Technologien und intelligente Systeme zu erweitern.',
+            description: 'Ich baue KI-Systeme von Anfang bis Ende — Backend, Modellintegration, Datenpipelines und reale Nutzerinteraktion. Fokus auf angewandte LLMs, Computer Vision, VR/AR und Tools, die echte Probleme lösen',
+            passion: 'Leidenschaftlich daran interessiert, die Grenzen der Mensch-Computer-Interaktion durch immersive Technologien und intelligente Systeme zu erweitern',
             location: 'Barcelona, Spanien',
             stat1: '+1 Jahr', stat1label: 'Forschungserf.',
             stat2: '4+', stat2label: 'KI-Systeme'
@@ -741,7 +746,7 @@ const translations = {
                     org: 'Hospital Clínic de Barcelona',
                     subtitle: 'Forschungsabteilung',
                     role: 'KI / NLP Forschungspraktikant',
-                    desc: 'Klinische NLP-Pipelines zur Dokumentenanonymisierung — Python, KI-Modelle und Benchmarking im medizinischen Kontext.',
+                    desc: 'Klinische NLP-Pipelines zur Dokumentenanonymisierung — Python, KI-Modelle und Benchmarking im medizinischen Kontext',
                     period: 'Okt 2025 – Feb 2026',
                     type: 'work'
                 },
@@ -749,7 +754,7 @@ const translations = {
                     org: 'Sapienza Università di Roma',
                     subtitle: 'Erasmus+ Stipendium',
                     role: 'Austauschstudent',
-                    desc: 'KI, Datenmanagement, Robotik und Computer Vision.',
+                    desc: 'KI, Datenmanagement, Robotik und Computer Vision',
                     period: 'Feb 2026 – Jul 2026',
                     type: 'education'
                 },
@@ -757,7 +762,7 @@ const translations = {
                     org: 'UPC – FIB',
                     subtitle: 'Barcelona',
                     role: 'Bachelor Informatik',
-                    desc: 'Algorithmen, Python, C++, Computergrafik, ML und Systemdesign.',
+                    desc: 'Algorithmen, Python, C++, Computergrafik, ML und Systemdesign',
                     period: '2022 – Aktuell',
                     type: 'education'
                 }
@@ -770,37 +775,38 @@ const translations = {
                     name: 'Embodied AI VR-Assistent',
                     tag: 'Thesis Projekt',
                     tagColor: 'blue',
-                    desc: 'KI-gestützter interaktiver Guide für eine VR-Anatomiesimulation. Gebaut mit Unity/C#, Python/FastAPI, lokalen LLMs, RAG, Speech-to-Text und Text-to-Speech.',
+                    desc: 'KI-gestützter interaktiver Guide für eine VR-Anatomiesimulation. Gebaut mit Unity/C#, Python/FastAPI, lokalen LLMs, RAG, Speech-to-Text und Text-to-Speech',
                     arch: ['Unity VR', 'FastAPI Backend', 'RAG Retrieval', 'Lokales LLM', 'Sprachantwort'],
                     tech: ['Unity', 'C#', 'Python', 'FastAPI', 'RAG', 'ChromaDB', 'Whisper', 'Piper', 'Ollama'],
-                    link: 'https://github.com/vilavilla'
+                    link: 'https://github.com/vilavilla/vr-embodied-ai-agent'
                 },
                 {
                     name: 'Klinische NLP-Anonymisierungspipeline',
                     tag: 'Forschungspraktikum',
                     tagColor: 'amber',
-                    desc: 'Pipeline zur Verarbeitung und Anonymisierung klinischer Dokumente mit KI/NLP. Enthält Python-Skripte, Modell-Benchmarking, LLM-Evaluation und datenschutzorientierte Verarbeitungsworkflows.',
+                    desc: 'Pipeline zur Verarbeitung und Anonymisierung klinischer Dokumente mit KI/NLP. Enthält Python-Skripte, Modell-Benchmarking, LLM-Evaluation und datenschutzorientierte Verarbeitungsworkflows',
                     arch: ['Klin. Dokumente', 'Python Pipeline', 'KI-Anonymisierung', 'Benchmarks', 'Evaluation'],
                     tech: ['Python', 'PyTorch', 'Transformers', 'NLP', 'Gemini API', 'AWS', 'Datenpipelines'],
-                    link: 'https://github.com/vilavilla'
+                    availability: 'Abgeschlossen · Privates Repository',
+                    link: null
                 },
                 {
                     name: 'AI Performance Coach',
                     tag: 'In Entwicklung',
                     tagColor: 'green',
-                    desc: 'KI-gestützter Trainingsassistent, der adaptive Workoutpläne mit Nutzerzielen, Einschränkungen, Progressionsregeln und LLM-Reasoning generiert.',
+                    desc: 'KI-gestützter Trainingsassistent, der adaptive Workoutpläne mit Nutzerzielen, Einschränkungen, Progressionsregeln und LLM-Reasoning generiert',
                     arch: ['Ziele', 'Einschränkungen', 'LLM-Reasoning', 'Progressionsregeln', 'Trainingsplan'],
                     tech: ['Python', 'FastAPI', 'LangChain', 'LLM APIs', 'Prompt Eng.', 'RAG', 'REST APIs'],
-                    link: 'https://github.com/vilavilla'
+                    link: 'https://github.com/vilavilla/ENTRENADOR'
                 },
                 {
                     name: 'Assistive Computer Vision',
                     tag: 'Computer Vision',
                     tagColor: 'purple',
-                    desc: 'Objekterkennungsprototyp für assistive Navigation, fokussiert auf die Echtzeit-Erkennung relevanter Objekte für sehbehinderte Personen.',
+                    desc: 'Objekterkennungsprototyp für assistive Navigation, fokussiert auf die Echtzeit-Erkennung relevanter Objekte für sehbehinderte Personen',
                     arch: ['Kamera-Eingang', 'YOLOv8-Erkennung', 'Filterung', 'Audio-Ausgabe'],
                     tech: ['Python', 'YOLOv8', 'OpenCV', 'TensorFlow'],
-                    link: 'https://github.com/vilavilla'
+                    link: 'https://github.com/vilavilla/BlindNav'
                 }
             ]
         },
@@ -839,7 +845,7 @@ const translations = {
         },
         contact: {
             title: 'Verbinden wir uns',
-            subtitle: 'Offen für Möglichkeiten in KI, Backend, Forschung und immersiven Technologien.',
+            subtitle: 'Offen für Möglichkeiten in KI, Backend, Forschung und immersiven Technologien',
             copyBtn: 'Klicken zum Kopieren der E-Mail',
             copiedBtn: 'E-Mail kopiert!'
         },
@@ -1113,18 +1119,25 @@ const ProjectCard = ({ project, index }) => {
 
             <div className="p-6 sm:p-7 flex flex-col h-full relative z-10">
                 {/* Tag + link */}
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between flex-wrap gap-2 mb-4">
                     <span className={`px-2.5 py-1 text-xs font-medium rounded-full border ${colors.bg} ${colors.border} ${colors.text}`}>
                         {project.tag}
                     </span>
-                    <motion.a
-                        href={project.link} target="_blank" rel="noopener noreferrer"
-                        whileHover={{ scale: 1.15 }} whileTap={{ scale: 0.9 }}
-                        className="project-link p-2.5 rounded-xl transition-all"
-                        aria-label={`View ${project.name}`}
-                    >
-                        <ExternalLink className="w-4 h-4" />
-                    </motion.a>
+                    {project.link ? (
+                        <motion.a
+                            href={project.link} target="_blank" rel="noopener noreferrer"
+                            whileHover={{ scale: 1.15 }} whileTap={{ scale: 0.9 }}
+                            className="project-link p-2.5 rounded-xl transition-all"
+                            aria-label={`View ${project.name}`}
+                        >
+                            <ExternalLink className="w-4 h-4" />
+                        </motion.a>
+                    ) : (
+                        <span className="project-availability" aria-label={project.availability}>
+                            <LockKeyhole className="w-3.5 h-3.5" aria-hidden="true" />
+                            {project.availability}
+                        </span>
+                    )}
                 </div>
 
                 {/* Name */}
